@@ -177,4 +177,11 @@ public class ListPeople extends Activity {
 		finish();
 
 	}
+	
+	public void returnLast(View view){
+		Intent intent = new Intent();
+		setResult(1, intent);
+		finish();
+	}
+	
 }

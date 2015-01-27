@@ -2,9 +2,9 @@ package com.doubibi.xiaomu;
 
 import java.util.ArrayList;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,13 +12,15 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class PeopleArrange extends ActionBarActivity implements OnItemClickListener {
+public class PeopleArrange extends Activity implements OnItemClickListener {
 
 	private ListView lv;
 	private ArrayAdapter<ListCellData> adapter;
+	private TextView tvTaskTheme;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +31,10 @@ public class PeopleArrange extends ActionBarActivity implements OnItemClickListe
       
         lv = (ListView) findViewById(R.id.lvPeople);
         lv.setAdapter(adapter);
-          
+        
+        tvTaskTheme = (TextView) findViewById(R.id.tvTaskTheme);
+        String taskTheme = this.getIntent().getBundleExtra("task").getString("taskTheme");
+        tvTaskTheme.setText(taskTheme);
         lv.setOnItemClickListener(this);
     }
 
@@ -71,6 +76,8 @@ public class PeopleArrange extends ActionBarActivity implements OnItemClickListe
 	public ArrayList<ListCellData> data=new ArrayList<ListCellData>();
 	@Override
 	protected void onActivityResult(int arg0, int arg1, Intent arg2) {
+		
+		if(arg1==1)return;
 		data = arg2.getExtras().getParcelableArrayList("list");
 		for(ListCellData d:data){
 			adapter.add(d);
@@ -82,8 +89,14 @@ public class PeopleArrange extends ActionBarActivity implements OnItemClickListe
 	
 	
 	public void returnLast(View view){
-		Intent intent = new Intent(this, PeopleArrange.class);
+		Intent intent = new Intent(this, EditArrange.class);
 		startActivity(intent);
 		
+	}
+	
+	public void btnRelease(View view){
+		
+		Toast.makeText(this, "此功能待开放", Toast.LENGTH_SHORT).show();
+
 	}
 }
