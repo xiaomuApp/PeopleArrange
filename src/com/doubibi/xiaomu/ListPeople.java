@@ -55,8 +55,8 @@ public class ListPeople extends Activity {
 	}  
 
 
-	public ArrayList<ListCellData> CheckedPeople = new ArrayList<ListCellData>();
-	public ArrayList<ListCellData> data= new ArrayList<ListCellData>();  
+	public static ArrayList<ListCellData> CheckedPeople = new ArrayList<ListCellData>();
+	public static ArrayList<ListCellData> data= new ArrayList<ListCellData>();  
 	private class MyAdapter extends BaseAdapter{  
 
 

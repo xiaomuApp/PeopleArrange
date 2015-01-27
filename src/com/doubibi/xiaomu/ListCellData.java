@@ -49,7 +49,7 @@ public class ListCellData implements Parcelable{
 	private String position=" ";
 	private String department=" ";
 	private String club=" ";
-	public boolean isCheck; 
+	public boolean isCheck = false; 
 
 	@Override
 	public int describeContents() {

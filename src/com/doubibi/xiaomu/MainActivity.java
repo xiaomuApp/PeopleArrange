@@ -78,14 +78,13 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
 	
 	public void startListPeople(View view){
 		Intent intent = new Intent(this, ListPeople.class);
-		
+		adapter.clear();
 		startActivityForResult(intent, 0);
 	}
 	
-	public ArrayList<ListCellData> data;
+	public ArrayList<ListCellData> data=new ArrayList<ListCellData>();
 	@Override
 	protected void onActivityResult(int arg0, int arg1, Intent arg2) {
-	//	data.clear();
 		data = arg2.getExtras().getParcelableArrayList("list");
 		for(ListCellData d:data){
 			adapter.add(d);
