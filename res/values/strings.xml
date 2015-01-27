@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Xiaomu</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="app_name">PeopleArrange</string>
     <string name="action_settings">Settings</string>
     <string name="btn_return">返回</string>
-    <string name="tv_people_arrange">人员安排</string>
+    <string name="title_activity_people_arrange">人员安排</string>
     <string name="title_activity_list_people">ListPeople</string>
+    <string name="hint_task_theme">任务主题</string>
+    <string name="btn_release">发布</string>
+    <string name="btn_all_elect">全选</string>
+    <string name="btn_all_concel">撤销</string>
+    <string name="btn_commit">确定</string>
+    <string name="btn_add">添加</string>
 
 </resources>

@@ -3,61 +3,63 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.doubibi.xiaomu.MainActivity" >
+    tools:context="com.doubibi.xiaomu.PeopleArrange" >
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/topic"
         android:orientation="horizontal"
-        android:padding="4dp" >
+        android:background="@color/topic_background_darkblue"
+        android:padding="@dimen/topic_margin" >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="@string/tv_people_arrange"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@color/tv_topic" />
+            android:textColor="@color/topic_font"
+            android:textSize="@dimen/topic_font"
+            android:text="@string/title_activity_people_arrange" />
 
         <ImageButton
             android:id="@+id/btnReturn"
+            android:contentDescription="@string/btn_return"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:background="@color/topic"
+            android:background="@color/topic_background_darkblue"
             android:src="@drawable/btn_return"
-            android:textColor="@color/topic" 
-            android:onClick="returnLast"/>
+            android:textColor="@color/topic_background_darkblue"
+            android:onClick="returnLast" />
 
         <ImageButton
             android:id="@+id/btnAddPeople"
+            android:contentDescription="@string/btn_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:background="@color/topic"
+            android:background="@color/topic_background_darkblue"
             android:src="@drawable/btn_add"
-            android:textColor="@color/topic" 
-            android:onClick="startListPeople"/>
+            android:textColor="@color/topic_background_darkblue"
+            android:onClick="startListPeople" />
     </RelativeLayout>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="70dip"
-        android:padding="10dip" >
+        android:padding="@dimen/list_base_margin" >
 
         <TextView
             android:id="@+id/tvTask"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/tv_background"
-            
-            android:text="任务1（女生节）"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
+            android:background="@color/list_cell_background_darkgrey"
+            android:hint="@string/hint_task_theme"
+            android:textColor="@color/list_cell_font_greyblack"
+            android:textSize="@dimen/task_theme_font" />
     </ScrollView>
 
     <ListView
@@ -65,9 +67,9 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="5"
-        android:paddingBottom="10dip"
-        android:paddingLeft="10dip"
-        android:paddingRight="10dip" >
+        android:paddingBottom="@dimen/list_base_margin"
+        android:paddingLeft="@dimen/list_base_margin"
+        android:paddingRight="@dimen/list_base_margin" >
     </ListView>
 
     <LinearLayout
@@ -75,17 +77,16 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:orientation="vertical"
-        
-        android:paddingLeft="10dip"
-        android:paddingRight="10dip" >
+        android:paddingLeft="@dimen/list_base_margin"
+        android:paddingRight="@dimen/list_base_margin" >
 
         <Button
             android:id="@+id/btnRelease"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/topic"
-            android:text="发布"
-            android:textColor="@color/tv_topic" />
+            android:background="@color/topic_background_darkblue"
+            android:text="@string/btn_release"
+            android:textColor="@color/topic_font" />
     </LinearLayout>
 
 </LinearLayout>

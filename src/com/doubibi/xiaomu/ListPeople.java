@@ -2,6 +2,7 @@ package com.doubibi.xiaomu;
 
 import java.util.ArrayList;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -29,7 +30,7 @@ public class ListPeople extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_list_people);
+		setContentView(R.layout.activity_people_list);
 
 		listview = (ListView)findViewById(R.id.lvAllPeople);  
 		checkAll = (Button)findViewById(R.id.btnAll);  
@@ -61,22 +62,26 @@ public class ListPeople extends Activity {
 
 
 		public MyAdapter(){  
-			data.add(new ListCellData("余湘如", "项目经理", "逗比比", "小木"));
-			data.add(new ListCellData("冼立志", "安卓开发", "逗比比", "小木"));
-			data.add(new ListCellData("黄炫", "安卓开发", "逗比比", "小木"));
-			data.add(new ListCellData("龙宇文", "安卓开发", "逗比比", "小木"));
-			data.add(new ListCellData("吴伟峰", "安卓开发", "逗比比", "小木"));
-			data.add(new ListCellData("池雪辉", "安卓开发", "逗比比", "小木"));
-			data.add(new ListCellData("杜梦圆", "后台开发", "逗比比", "小木"));
-			data.add(new ListCellData("刘志杰", "后台开发", "逗比比", "小木"));
-			data.add(new ListCellData("李凯旋", "ios开发", "逗比比", "小木"));
-			data.add(new ListCellData("周楚鹏", "UI设计", "逗比比", "小木"));
+			if(data.isEmpty()){
+				data.add(new ListCellData("余湘如", "项目经理", "逗比比", "小木"));
+				data.add(new ListCellData("冼立志", "安卓开发", "逗比比", "小木"));
+				data.add(new ListCellData("黄炫", "安卓开发", "逗比比", "小木"));
+				data.add(new ListCellData("龙宇文", "安卓开发", "逗比比", "小木"));
+				data.add(new ListCellData("吴伟峰", "安卓开发", "逗比比", "小木"));
+				data.add(new ListCellData("池雪辉", "安卓开发", "逗比比", "小木"));
+				data.add(new ListCellData("杜梦圆", "后台开发", "逗比比", "小木"));
+				data.add(new ListCellData("刘志杰", "后台开发", "逗比比", "小木"));
+				data.add(new ListCellData("李凯旋", "ios开发", "逗比比", "小木"));
+				data.add(new ListCellData("周楚鹏", "UI设计", "逗比比", "小木"));
+			}
 		}  
 
 		public void checkAll(){  
-			for(ListCellData msg:data){  
-				msg.isCheck = true; 
-				CheckedPeople.add(msg);
+			for(ListCellData msg:data){ 
+				if(msg.isCheck == false){
+					msg.isCheck = true; 
+					CheckedPeople.add(msg);
+				}
 			}  
 			notifyDataSetChanged();  
 		}  
@@ -103,12 +108,12 @@ public class ListPeople extends Activity {
 			return position;  
 		}  
 
-		@Override  
+		@SuppressLint("InflateParams") @Override  
 		public View getView(int position, View convertView, ViewGroup parent) {  
 			ViewHolder viewHolder;  
 			if(convertView == null){  
 				LayoutInflater inflater = LayoutInflater.from(ListPeople.this);  
-				convertView = inflater.inflate(R.layout.list_cell_all, null);  
+				convertView = inflater.inflate(R.layout.list_cell_people_list, null);  
 				viewHolder = new ViewHolder();  
 				viewHolder.textView = (TextView) convertView.findViewById(R.id.tvPeople);
 				viewHolder.checkBox = (CheckBox)convertView.findViewById(R.id.checkBox);  

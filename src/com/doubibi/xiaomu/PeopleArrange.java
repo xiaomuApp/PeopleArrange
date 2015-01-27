@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,7 +15,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 
-public class MainActivity extends ActionBarActivity implements OnItemClickListener {
+public class PeopleArrange extends ActionBarActivity implements OnItemClickListener {
 
 	private ListView lv;
 	private ArrayAdapter<ListCellData> adapter;
@@ -24,26 +23,13 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_people_arrange);
         
-        adapter = new ArrayAdapter<ListCellData>(this, R.layout.list_cell);
+        adapter = new ArrayAdapter<ListCellData>(this, R.layout.list_cell_people_arrange);
       
         lv = (ListView) findViewById(R.id.lvPeople);
         lv.setAdapter(adapter);
-        
-//        adapter.add(new ListCellData("余湘如", "项目经理", "逗比比", "小木"));
-//        adapter.add(new ListCellData("冼立志", "安卓开发", "逗比比", "小木"));
-//        adapter.add(new ListCellData("黄炫", "安卓开发", "逗比比", "小木"));
-//        adapter.add(new ListCellData("龙宇文", "安卓开发", "逗比比", "小木"));
-//        adapter.add(new ListCellData("吴伟峰", "安卓开发", "逗比比", "小木"));
-//        adapter.add(new ListCellData("池雪辉", "安卓开发", "逗比比", "小木"));
-//        adapter.add(new ListCellData("杜梦圆", "后台开发", "逗比比", "小木"));
-//        adapter.add(new ListCellData("刘志杰", "后台开发", "逗比比", "小木"));
-//        adapter.add(new ListCellData("李凯旋", "ios开发", "逗比比", "小木"));
-//        adapter.add(new ListCellData("周楚鹏", "UI设计", "逗比比", "小木"));
-        
-
-        
+          
         lv.setOnItemClickListener(this);
     }
 
@@ -96,7 +82,7 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
 	
 	
 	public void returnLast(View view){
-		Intent intent = new Intent(this, MainActivity.class);
+		Intent intent = new Intent(this, PeopleArrange.class);
 		startActivity(intent);
 		
 	}
