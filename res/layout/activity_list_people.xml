@@ -1,0 +1,39 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/btnAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="全选" >
+        </Button>
+
+        <Button
+            android:id="@+id/btnConcel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="撤消" >
+        </Button>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lvAllPeople"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" >
+    </ListView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="commitPeopleList"
+        android:text="确定" />
+
+</LinearLayout>

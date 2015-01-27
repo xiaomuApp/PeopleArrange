@@ -1,0 +1,91 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.doubibi.xiaomu.MainActivity" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/topic"
+        android:orientation="horizontal"
+        android:padding="4dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/tv_people_arrange"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/tv_topic" />
+
+        <ImageButton
+            android:id="@+id/btnReturn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@color/topic"
+            android:src="@drawable/btn_return"
+            android:textColor="@color/topic" 
+            android:onClick="returnLast"/>
+
+        <ImageButton
+            android:id="@+id/btnAddPeople"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@color/topic"
+            android:src="@drawable/btn_add"
+            android:textColor="@color/topic" 
+            android:onClick="startListPeople"/>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="70dip"
+        android:padding="10dip" >
+
+        <TextView
+            android:id="@+id/tvTask"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/tv_background"
+            
+            android:text="任务1（女生节）"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+    </ScrollView>
+
+    <ListView
+        android:id="@+id/lvPeople"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:paddingBottom="10dip"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip" >
+    </ListView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip" >
+
+        <Button
+            android:id="@+id/btnRelease"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/topic"
+            android:text="发布"
+            android:textColor="@color/tv_topic" />
+    </LinearLayout>
+
+</LinearLayout>
