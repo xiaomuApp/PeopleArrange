@@ -74,11 +74,11 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:paddingLeft="@dimen/list_base_margin"
-        android:paddingRight="@dimen/list_base_margin" >
+        android:paddingRight="@dimen/list_base_margin"
+        android:paddingBottom="@dimen/list_base_margin" >
 
         <Button
             android:id="@+id/btnRelease"
@@ -86,6 +86,8 @@
             android:layout_height="wrap_content"
             android:background="@color/topic_background_darkblue"
             android:text="@string/btn_release"
+            android:textSize="@dimen/btn_release_font"
+            android:padding="@dimen/btn_release_margin"
             android:textColor="@color/topic_font" />
     </LinearLayout>
 

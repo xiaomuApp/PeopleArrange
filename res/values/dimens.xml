@@ -6,8 +6,10 @@
     <dimen name="topic_margin">4dp</dimen>
     <dimen name="topic_font">23sp</dimen>
     <dimen name="list_base_margin">10dip</dimen>
-    <dimen name="task_theme_font">20sp</dimen>
+    <dimen name="task_theme_font">22sp</dimen>
     <dimen name="list_cell_margin">10dip</dimen>
     <dimen name="list_cell_font">20sp</dimen>
+    <dimen name="btn_release_font">22sp</dimen>
+    <dimen name="btn_release_margin">7dip</dimen>
 
 </resources>
