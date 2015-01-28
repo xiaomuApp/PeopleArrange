@@ -16,7 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class PeopleArrange extends Activity implements OnItemClickListener {
+public class Aty_PeopleArrange extends Activity implements OnItemClickListener {
 
 	private ListView lv;
 	private ArrayAdapter<ListCellData> adapter;
@@ -64,7 +64,7 @@ public class PeopleArrange extends Activity implements OnItemClickListener {
 			long id) {
 		ListCellData data = adapter.getItem(position);
 		
-		Toast.makeText(this, String.format("Ãû×Ö:%s Ö°Î»:%s ²¿ÃÅ:%s ÉçÍÅ:%s", data.getName(),data.getPosition(),data.getDepartment(),data.getClub()), Toast.LENGTH_SHORT).show();
+		Toast.makeText(this, String.format("ï¿½ï¿½ï¿½ï¿½:%s Ö°Î»:%s ï¿½ï¿½ï¿½ï¿½:%s ï¿½ï¿½ï¿½ï¿½:%s", data.getName(),data.getPosition(),data.getDepartment(),data.getClub()), Toast.LENGTH_SHORT).show();
 	}
 	
 	public void startListPeople(View view){
@@ -89,14 +89,14 @@ public class PeopleArrange extends Activity implements OnItemClickListener {
 	
 	
 	public void returnLast(View view){
-		Intent intent = new Intent(this, EditArrange.class);
+		Intent intent = new Intent(this, Aty_EditArrange.class);
 		startActivity(intent);
 		
 	}
 	
 	public void btnRelease(View view){
 		
-		Toast.makeText(this, "´Ë¹¦ÄÜ´ý¿ª·Å", Toast.LENGTH_SHORT).show();
+		Toast.makeText(this, "ï¿½Ë¹ï¿½ï¿½Ü´ï¿½ï¿½ï¿½ï¿½ï¿½", Toast.LENGTH_SHORT).show();
 
 	}
 }

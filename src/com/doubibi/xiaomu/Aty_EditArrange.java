@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class EditArrange extends Activity {
+public class Aty_EditArrange extends Activity {
 	
 	TextView ev;
 	
@@ -20,7 +20,7 @@ public class EditArrange extends Activity {
 	public void btnPeopleArrange(View view){
 		ev = (TextView) findViewById(R.id.evTaskTheme);
 		String taskTheme = ev.getText().toString();
-		Intent intent = new Intent(this, PeopleArrange.class);
+		Intent intent = new Intent(this, Aty_PeopleArrange.class);
 		Bundle data = new Bundle();
 		data.putString("taskTheme", taskTheme);
 		intent.putExtra("task", data);
@@ -29,7 +29,7 @@ public class EditArrange extends Activity {
 	
 	public void btnSave(View view){
 		
-		Toast.makeText(this, "´Ë¹¦ÄÜ´ý¿ª·Å", Toast.LENGTH_SHORT).show();
+		Toast.makeText(this, "ï¿½Ë¹ï¿½ï¿½Ü´ï¿½ï¿½ï¿½ï¿½ï¿½", Toast.LENGTH_SHORT).show();
 	}
 
 }
